@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- /static 为存放静态资源的路径，意为不拦截对此文件夹下文件的请求 -->
+	<constant name="struts.action.excludePattern" value="/statics/.*?" />
+    <!-- 是否启用开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- struts配置文件改动后，是否重新加载 -->
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <!-- 设置浏览器是否缓存静态内容 -->
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <!-- 请求参数的编码方式 -->
+    <constant name="struts.i18n.encoding" value="utf-8" />
+    <!-- 每次HTTP请求系统都重新加载资源文件，有助于开发 -->
+    <constant name="struts.i18n.reload" value="true" />
+    <!-- 允许标签中使用表达式语法 -->
+    <constant name="struts.tag.altSyntax" value="true" />
+
+    <package name="default" extends="struts-default" namespace="/">
+		<action name="employee_*" class="employeeAction" method="{1}">
+			<result name="login">/WEB-INF/jsp/main.jsp</result>
+			<result name="logout">/WEB-INF/jsp/login.jsp</result>
+		</action>
+	</package>
+
+</struts>
